@@ -19,4 +19,6 @@
 		</property>
 	</bean>
  
+ 	<import resource="spring-module.xml" />
+	
 </beans>
