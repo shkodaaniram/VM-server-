@@ -6,12 +6,20 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 public class ConnectionUtil {
 	
 	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplate;
 
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
+	}
+	
+	public  JdbcTemplate createJdbcTemplate(){
+		jdbcTemplate = new JdbcTemplate(dataSource);
+		return jdbcTemplate;
 	}
 
 	public Connection getConnection() {

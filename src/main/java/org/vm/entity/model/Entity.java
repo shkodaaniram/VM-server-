@@ -5,13 +5,18 @@ import java.sql.Date;
 public class Entity {
 	private int id;
 	private String name;
-	private FilterType filterType;
+	private int filterType;
 	private String path;
 	private EntityType entityType;
 	private Date uploadedOn;
-	private int accountId;  
+	private int accountId;
 
-	public Entity(int id, String name, FilterType filterType, String path, EntityType entityType, Date uploadedOn, int accountId){
+	public Entity() {
+
+	}
+
+	public Entity(int id, String name, int filterType, String path,
+			EntityType entityType, Date uploadedOn, int accountId) {
 		this.id = id;
 		this.name = name;
 		this.filterType = filterType;
@@ -37,11 +42,11 @@ public class Entity {
 		this.name = name;
 	}
 
-	public FilterType getFilterType() {
+	public int getFilterType() {
 		return filterType;
 	}
 
-	public void setFilterType(FilterType filterType) {
+	public void setFilterType(int filterType) {
 		this.filterType = filterType;
 	}
 
@@ -60,7 +65,7 @@ public class Entity {
 	public void setEntityType(EntityType entityType) {
 		this.entityType = entityType;
 	}
-	
+
 	public Date getUploadedOn() {
 		return uploadedOn;
 	}
@@ -77,4 +82,3 @@ public class Entity {
 		this.accountId = accountId;
 	}
 }
-
